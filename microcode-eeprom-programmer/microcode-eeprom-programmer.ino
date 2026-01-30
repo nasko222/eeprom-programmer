@@ -15,42 +15,42 @@
 #define HLT 0b10000000000000000000000000000000  // Halt clock
 
 // Instructions
-#define PCO 0b00000000000000000000000000000000  // Program counter out
+#define PCO 0b00000000000000000000000000000000  // Program counter out 			(active low)
 #define PCE 0b00000000000000000000000000000000  // Program counter enable
-#define MI  0b00000000000000000000000000000000  // Memory address register in
-#define LI  0b00000000000000000000000000000000  // Load instruction
-#define II  0b00000000000000000000000000000000  // Instruction register in
-#define IO  0b00000000000000000000000000000000  // Instruction register out
-#define SI  0b00000000000000000000000000000000  // Stack pointer in
-#define SO  0b00000000000000000000000000000000  // Stack pointer out
+#define MI  0b00000000000000000000000000000000  // Memory address register in 	(active low)
+#define LI  0b00000000000000000000000000000000  // Load instruction 			(active low)
+#define II  0b00000000000000000000000000000000  // Instruction register in 		(active low)
+#define IO  0b00000000000000000000000000000000  // Instruction register out 	(active low)
+#define SI  0b00000000000000000000000000000000  // Stack pointer in 			(active low)
+#define SO  0b00000000000000000000000000000000  // Stack pointer out 			(active low)
 
 // Interrupts
 #define STI 0b00000000000000000000000000000000  // Set interrupt flag
 #define CLI 0b00000000000000000000000000000000  // Clear interrupt flag
 
 // ALU
-#define EO  0b00000000000000000000000000000000  // ALU out
+#define EO  0b00000000000000000000000000000000  // ALU out 						(active low)
 #define SU  0b00000000000000000000000000000000  // ALU subtract
-#define AND 0b00000000000000000000000000000000  // AND result out
-#define OR  0b00000000000000000000000000000000  // OR result out
-#define XOR 0b00000000000000000000000000000000  // XOR result out
-#define FI  0b00000000000000000000000000000000  // Flags in
+#define AND 0b00000000000000000000000000000000  // AND result out 				(active low)
+#define OR  0b00000000000000000000000000000000  // OR result out 				(active low)
+#define XOR 0b00000000000000000000000000000000  // XOR result out 				(active low)
+#define FI  0b00000000000000000000000000000000  // Flags in 					(active low)
 
 // Registers
-#define AI  0b00000000000000000000000000000000  // A register in
-#define BI  0b00000000000000000000000000000000  // B register in
-#define CI  0b00000000000000000000000000000000  // C register in
-#define AO  0b00000000000000000000000000000000  // A register out
-#define BO  0b00000000000000000000000000000000  // B register out
-#define CO  0b00000000000000000000000000000000  // C register out
-#define RND 0b00000000000000000000000000000000  // Random register out
+#define AI  0b00000000000000000000000000000000  // A register in 				(active low)
+#define BI  0b00000000000000000000000000000000  // B register in				(active low)
+#define CI  0b00000000000000000000000000000000  // C register in 				(active low)
+#define AO  0b00000000000000000000000000000000  // A register out 				(active low)
+#define BO  0b00000000000000000000000000000000  // B register out 				(active low)
+#define CO  0b00000000000000000000000000000000  // C register out 				(active low)
+#define RND 0b00000000000000000000000000000000  // Random register out 			(active low)
 
 // RAM
 #define RI  0b00000000000000000000000000000000  // RAM data in
-#define RO  0b00000000000000000000000000000000  // RAM data out
+#define RO  0b00000000000000000000000000000000  // RAM data out 				(active low)
 
 // Output
-#define OI  0b00000000000000000000000000000000  // Output register in
+#define OI  0b00000000000000000000000000000000  // Output register in 			(active low)
 #define DI  0b00000000000000000000000000000000  // LCD display in
 #define DSI 0b00000000000000000000000000000000  // LCD display set instruction
 
