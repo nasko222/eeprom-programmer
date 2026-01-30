@@ -63,7 +63,7 @@ void writeEEPROM(int address, byte data) {
    Read the contents of the EEPROM and print them to the serial monitor.
 */
 void printContents() {
-  for (int base = 0; base <= 255; base += 16) {
+  for (int base = 0; base <= 2047; base += 16) {
     byte data[16];
     for (int offset = 0; offset <= 15; offset += 1) {
       data[offset] = readEEPROM(base + offset);

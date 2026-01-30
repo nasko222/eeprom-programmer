@@ -59,7 +59,7 @@ void writeEEPROM(int address, byte data) {
  * Read the contents of the EEPROM and print them to the serial monitor.
  */
 void printContents() {
-  for (int base = 0; base <= 255; base += 16) {
+  for (int base = 0; base <= 2047; base += 16) {
     byte data[16];
     for (int offset = 0; offset <= 15; offset += 1) {
       data[offset] = readEEPROM(base + offset);
@@ -91,6 +91,7 @@ void setup() {
   pinMode(WRITE_EN, OUTPUT);
   Serial.begin(57600);
 
+/*
   // Erase entire EEPROM
   Serial.print("Erasing EEPROM");
   for (int address = 0; address <= 2047; address += 1) {
@@ -101,8 +102,9 @@ void setup() {
     }
   }
   Serial.println(" done");
+*/
 
-
+/*
   // Program data bytes
   Serial.print("Programming EEPROM");
   for (int address = 0; address < sizeof(data); address += 1) {
@@ -113,7 +115,7 @@ void setup() {
     }
   }
   Serial.println(" done");
-
+*/
 
   // Read and print out the contents of the EERPROM
   Serial.println("Reading EEPROM");

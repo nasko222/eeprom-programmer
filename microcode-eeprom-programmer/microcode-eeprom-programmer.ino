@@ -8,22 +8,61 @@
 #define EEPROM_D0 5
 #define EEPROM_D7 12
 #define WRITE_EN 13
+// WORD       [unique][ in   ][  out ][jumps ]
+// WORD       01234567012345670123456701234567
 
-#define HLT 0b1000000000000000  // Halt clock
-#define MI  0b0100000000000000  // Memory address register in
-#define RI  0b0010000000000000  // RAM data in
-#define RO  0b0001000000000000  // RAM data out
-#define IO  0b0000100000000000  // Instruction register out
-#define II  0b0000010000000000  // Instruction register in
-#define AI  0b0000001000000000  // A register in
-#define AO  0b0000000100000000  // A register out
-#define EO  0b0000000010000000  // ALU out
-#define SU  0b0000000001000000  // ALU subtract
-#define BI  0b0000000000100000  // B register in
-#define OI  0b0000000000010000  // Output register in
-#define CE  0b0000000000001000  // Program counter enable
-#define CO  0b0000000000000100  // Program counter out
-#define J   0b0000000000000010  // Jump (program counter in)
+// Main
+#define HLT 0b10000000000000000000000000000000  // Halt clock
+
+// Instructions
+#define PCO 0b00000000000000000000000000000000  // Program counter out
+#define PCE 0b00000000000000000000000000000000  // Program counter enable
+#define MI  0b00000000000000000000000000000000  // Memory address register in
+#define LI  0b00000000000000000000000000000000  // Load instruction
+#define II  0b00000000000000000000000000000000  // Instruction register in
+#define IO  0b00000000000000000000000000000000  // Instruction register out
+#define SI  0b00000000000000000000000000000000  // Stack pointer in
+#define SO  0b00000000000000000000000000000000  // Stack pointer out
+
+// Interrupts
+#define STI 0b00000000000000000000000000000000  // Set interrupt flag
+#define CLI 0b00000000000000000000000000000000  // Clear interrupt flag
+
+// ALU
+#define EO  0b00000000000000000000000000000000  // ALU out
+#define SU  0b00000000000000000000000000000000  // ALU subtract
+#define AND 0b00000000000000000000000000000000  // AND result out
+#define OR  0b00000000000000000000000000000000  // OR result out
+#define XOR 0b00000000000000000000000000000000  // XOR result out
+#define FI  0b00000000000000000000000000000000  // Flags in
+
+// Registers
+#define AI  0b00000000000000000000000000000000  // A register in
+#define BI  0b00000000000000000000000000000000  // B register in
+#define CI  0b00000000000000000000000000000000  // C register in
+#define AO  0b00000000000000000000000000000000  // A register out
+#define BO  0b00000000000000000000000000000000  // B register out
+#define CO  0b00000000000000000000000000000000  // C register out
+#define RND 0b00000000000000000000000000000000  // Random register out
+
+// RAM
+#define RI  0b00000000000000000000000000000000  // RAM data in
+#define RO  0b00000000000000000000000000000000  // RAM data out
+
+// Output
+#define OI  0b00000000000000000000000000000000  // Output register in
+#define DI  0b00000000000000000000000000000000  // LCD display in
+#define DSI 0b00000000000000000000000000000000  // LCD display set instruction
+
+// Jumps
+#define J   0b00000000000000000000000000000000  // Jump (program counter in)
+#define JC  0b00000000000000000000000000000000  // Jump Carry
+#define JZ  0b00000000000000000000000000000000  // Jump Zero
+#define JO  0b00000000000000000000000000000000  // Jump Overflow
+#define JS  0b00000000000000000000000000000000  // Jump Sign
+#define JG  0b00000000000000000000000000000000  // Jump Greater
+#define JL  0b00000000000000000000000000000000  // Jump Less
+#define JE  0b00000000000000000000000000000000  // Jump Equal
 
 uint16_t data[] = {
   MI|CO,  RO|II|CE,  0,      0,      0,         0, 0, 0,   // 0000 - NOP
