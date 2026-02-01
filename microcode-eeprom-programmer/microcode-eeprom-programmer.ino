@@ -27,6 +27,8 @@
 // Interrupts
 #define STI 0b00000000000000000000000000000000  // Set interrupt flag
 #define CLI 0b00000000000000000000000000000000  // Clear interrupt flag
+#define NI  0b00000000000000000000000000000000  // Interrupt register in
+#define NO  0b00000000000000000000000000000000  // Interrupt register out
 
 // ALU
 #define EO  0b00000000000000000000000000000000  // ALU out 						(active low)
